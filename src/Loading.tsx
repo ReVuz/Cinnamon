@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import './styles.css';
 
 type LoadingProps = {
   setResults: (results: { chord: string }[]) => void;
@@ -43,10 +43,7 @@ const Loading: React.FC<LoadingProps> = ({ setResults, setSongTitle, file }) => 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-purple-100 p-6 flex items-center justify-center">
       <div className="text-center">
-        <div className="flex items-center justify-center mb-4">
-          <Loader2 className="animate-spin text-indigo-600 mr-2" />
-          <h2 className="text-2xl font-semibold text-indigo-900">Analyzing...</h2>
-        </div>
+      <div className="loader"></div>
         <div className="w-full bg-gray-200 rounded-full h-2.5 mb-8">
           <div
             className="bg-indigo-600 h-2.5 rounded-full transition-all duration-500"
