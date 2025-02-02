@@ -110,7 +110,7 @@ const AudioUpload: React.FC<AudioUploadProps> = ({ setFile, setYoutubeUrl, setEr
         <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-lg rounded-xl shadow-lg p-8">
           <h1 className="text-3xl font-bold text-center mb-8 text-indigo-900">
             <Music2 className="inline-block mr-2 mb-1" />
-            Chord Detection
+            Flutune
           </h1>
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div
