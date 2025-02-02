@@ -65,7 +65,8 @@ For Software:
 *Add caption explaining what this shows*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
+![My Image](https://github.com/your-repo/image.png)
+
 *Add caption explaining your workflow*
 
 # Build Photos
