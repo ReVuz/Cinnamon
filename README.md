@@ -11,7 +11,7 @@
 - Member 3: Revathy M R - CUSAT
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+[flutune.vercel.app](http://flutune.vercel.app/)
 
 
 ## Overview
@@ -32,9 +32,7 @@ This web application is designed to detect and analyze chords in audio files or 
 Beginner flutists face a significant challenge in accessing accurate musical notes for songs they wish to learn. While digital platforms offer numerous tutorials and audio resources, there is a lack of reliable tools to convert audio into precise flute notation.
 ### The Solution
 
-Flutune transforms this challenge into an opportunity by offering an intuitive web application that:
-
-Instantly converts any audio file or YouTube song into flute-friendly notes
+Flutune transforms this challenge into an opportunity by offering an intuitive web application that instantly converts any audio file or YouTube song into flute-friendly notes
 
 ## Technical Details
 ### Technologies/Components Used
@@ -66,7 +64,8 @@ For Software:
 
 # Diagrams
 ![My Image](./Welcome%20to%20FigJam.jpg)
-The Flutune workflow begins with user input through either audio file upload or YouTube URL. Once received, the system processes the audio to extract the melody and identify individual notes. In the backend, noise is removed from the audio using noise reduction algorithms. The clean audio is then analyzed to identify frequencies, which are converted into corresponding musical notes. The results are then displayed on screen with an option to download for practice.
+The Flutune workflow begins with user input through either audio file upload or YouTube URL. Once received, the system processes the audio to extract the melody and identify individual notes. In the backend, noise is removed from the audio. The clean audio is then analyzed to identify frequencies, which are converted into corresponding musical notes. The results are then displayed on screen with an option to download 
+ as txt for practice or adding extra notes.
 
 # Build Photos
 ![Team](./pic.jpg)
@@ -75,16 +74,14 @@ The Flutune workflow begins with user input through either audio file upload or 
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+[my video](.\Flutune - Google Chrome 2025-02-02 10-37-33 (1).mp4")
+The video demo shows the user journey. The user uploads the audio file or the youtube link. There is a pretty cute loading screen and then we get the flute notes of the song. 
 
-# Additional Demos
-[Add any extra demo materials/links]
 
 ## Team Contributions
-- [Sindhu P R]: [Specific contributions]
-- [Revathy M R]: [Specific contributions]
-- [Shahana Sherin]: [Specific contributions]
+- [Sindhu P R]: [Backend Endpoints]
+- [Revathy M R]: [Styling and Integration]
+- [Shahana Sherin]: [Frontent Pages]
 
 ---
 Made with ❤️ at TinkerHub
