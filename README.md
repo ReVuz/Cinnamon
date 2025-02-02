@@ -65,7 +65,7 @@ For Software:
 *Add caption explaining what this shows*
 
 # Diagrams
-![My Image](.//Welcome%20to%20FigJam.png)
+![My Image](./https://github.com/ReVuz/Cinnamon/blob/main/Welcome%20to%20FigJam.jpg)
 The FluteMagic workflow begins with user input through either audio file upload or YouTube URL. Once received, the system processes the audio to extract the melody and identify individual notes. In the backend, noise is removed from the audio using noise reduction algorithms. The clean audio is then analyzed to identify frequencies, which are converted into corresponding musical notes. The results are then displayed on screen with an option to download for practice.
 
 # Build Photos
