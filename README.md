@@ -32,7 +32,7 @@ This web application is designed to detect and analyze chords in audio files or 
 Beginner flutists face a significant challenge in accessing accurate musical notes for songs they wish to learn. While digital platforms offer numerous tutorials and audio resources, there is a lack of reliable tools to convert audio into precise flute notation.
 ### The Solution
 
-FluteMagic transforms this challenge into an opportunity by offering an intuitive web application that:
+Flutune transforms this challenge into an opportunity by offering an intuitive web application that:
 
 Instantly converts any audio file or YouTube song into flute-friendly notes
 
@@ -66,10 +66,10 @@ For Software:
 
 # Diagrams
 ![My Image](./Welcome%20to%20FigJam.jpg)
-The FluteMagic workflow begins with user input through either audio file upload or YouTube URL. Once received, the system processes the audio to extract the melody and identify individual notes. In the backend, noise is removed from the audio using noise reduction algorithms. The clean audio is then analyzed to identify frequencies, which are converted into corresponding musical notes. The results are then displayed on screen with an option to download for practice.
+The Flutune workflow begins with user input through either audio file upload or YouTube URL. Once received, the system processes the audio to extract the melody and identify individual notes. In the backend, noise is removed from the audio using noise reduction algorithms. The clean audio is then analyzed to identify frequencies, which are converted into corresponding musical notes. The results are then displayed on screen with an option to download for practice.
 
 # Build Photos
-![Team](Add photo of your team here)
+![Team](./image.jpeg)
 
 ![Final](Add photo of final product here)
 *Explain the final build*
@@ -83,9 +83,9 @@ The FluteMagic workflow begins with user input through either audio file upload 
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [Sindhu P R]: [Specific contributions]
+- [Revathy M R]: [Specific contributions]
+- [Shahana Sherin]: [Specific contributions]
 
 ---
 Made with ❤️ at TinkerHub
