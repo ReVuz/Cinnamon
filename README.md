@@ -53,14 +53,14 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Initial Page](./Frontpage.jpg)
+This page is the initial page where the user can upload the file or youtube link 
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Loading page](./loadingpage.jpg)
+This page shows the loading of the files and notes
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Result Page](./Result.jpg)
+This is the last page which shows the result,the notes are shown there and from there the note can be downloaded too
 
 # Diagrams
 ![My Image](./Welcome%20to%20FigJam.jpg)
@@ -74,7 +74,7 @@ The Flutune workflow begins with user input through either audio file upload or 
 
 ### Project Demo
 # Video
-[my video](.\Flutune - Google Chrome 2025-02-02 10-37-33 (1).mp4")
+[my video](./Flutune - Google Chrome 2025-02-02 10-37-33 (1).mp4")
 The video demo shows the user journey. The user uploads the audio file or the youtube link. There is a pretty cute loading screen and then we get the flute notes of the song. 
 
 
