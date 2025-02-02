@@ -4,20 +4,12 @@ import AudioUpload from './AudioUpload';
 import Loading from './Loading';
 import Results from './Results';
 
-type ChordResult = {
-  chord: string;
-  start_time: number;
-  end_time: number;
-};
-
-type InstrumentType = 'flute';
-
 function App() {
   const [file, setFile] = useState<File | null>(null);
   const [youtubeUrl, setYoutubeUrl] = useState('');
-  const [results, setResults] = useState<ChordResult[]>([]);
+  const [results, setResults] = useState<string[]>([]);
   const [songTitle, setSongTitle] = useState('');
-  const [selectedInstrument, setSelectedInstrument] = useState<InstrumentType>('flute');
+  const [selectedInstrument, setSelectedInstrument] = useState<'flute'>('flute');
   const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState('');
 
@@ -36,8 +28,6 @@ function App() {
             <Loading
               setResults={setResults}
               setSongTitle={setSongTitle}
-              file={file}
-              youtubeUrl={youtubeUrl}
             />
           }
         />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, Play, Pause, Guitar, Piano, Blinds as Violin } from 'lucide-react';
+import { Download, Play, Pause, Blinds as Violin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 type ResultsProps = {
@@ -36,12 +36,12 @@ const Results: React.FC<ResultsProps> = ({
   }, []);
 
   const handleDownload = () => {
-    const content = results.map(r => r.chord).join(' - ');
+    const content = results.join(' - ');
     const blob = new Blob([content], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${songTitle}-chords.txt`;
+    a.download = `${songTitle}-notes.txt`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -68,78 +68,77 @@ const Results: React.FC<ResultsProps> = ({
         <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-lg rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl">
           <button 
             onClick={handleBack} 
-            className="absolute top-4 left-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="mb-6 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
             Back
           </button>
           
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-semibold text-gray-900 animate-fade-in">{songTitle}</h2>
-            <button
-              onClick={handleDownload}
-              className="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              <Download className="mr-2" /> Download Results
-            </button>
-          </div>
-
-          <div className="flex justify-center space-x-4 mb-8">
-            <button
-              onClick={() => setSelectedInstrument('flute')}
-              className={`p-3 rounded-lg flex items-center transition-all duration-300 hover:scale-105 ${
-                selectedInstrument === 'flute' 
-                  ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg' 
-                  : 'bg-white/50 text-gray-600 hover:bg-white/80'
-              }`}
-            >
-              <Violin className="mr-2" /> Flute
-            </button>
-          </div>
-
-          <div className="flex justify-center mb-6">
-            <button
-              onClick={() => setIsPlaying(!isPlaying)}
-              className="p-4 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-lg transition-all duration-300 hover:scale-110"
-            >
-              {isPlaying ? <Pause /> : <Play />}
-            </button>
-          </div>
-
-          <div className="bg-white/70 backdrop-blur-lg p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300">
-            <div className="flex flex-wrap justify-center gap-4">
-              {results.map((result, index) => (
-                <div
-                  key={index}
-                  className={`
-                    relative min-w-[100px] h-16 flex items-center justify-center
-                    transform transition-all duration-300 hover:scale-105
-                    ${index % 4 === 0 ? 'border-l-2 border-gray-200' : ''}
-                  `}
-                  style={{
-                    animation: `fadeIn 0.5s ease-out ${index * 0.1}s both`
-                  }}
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="text-2xl font-serif bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                      {result.chord}
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      {result.start_time.toFixed(1)}s - {result.end_time.toFixed(1)}s
-                    </div>
-                  </div>
-                  {index < results.length - 1 && (
-                    <div className="absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-300">
-                      |
-                    </div>
-                  )}
-                </div>
-              ))}
+          <div className="flex flex-col space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-3xl font-bold text-gray-900 animate-fade-in">{songTitle}</h2>
+              <button
+                onClick={handleDownload}
+                className="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                <Download className="mr-2" /> Download Results
+              </button>
             </div>
-            <div className="mt-4 border-t border-gray-200 pt-4">
-              <div className="flex justify-center gap-2 text-sm text-gray-500">
-                <span>Time Signature: 4/4</span>
-                <span>•</span>
-                <span>Key: {results[0]?.chord.includes('m') ? 'Minor' : 'Major'}</span>
+
+            <div className="flex justify-center space-x-4 mb-8">
+              <button
+                onClick={() => setSelectedInstrument('flute')}
+                className={`p-3 rounded-lg flex items-center transition-all duration-300 hover:scale-105 ${
+                  selectedInstrument === 'flute' 
+                    ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg' 
+                    : 'bg-white/50 text-gray-600 hover:bg-white/80'
+                }`}
+              >
+                <Violin className="mr-2" /> Flute
+              </button>
+            </div>
+
+            <div className="flex justify-center mb-6">
+              <button
+                onClick={() => setIsPlaying(!isPlaying)}
+                className="p-4 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-lg transition-all duration-300 hover:scale-110"
+              >
+                {isPlaying ? <Pause /> : <Play />}
+              </button>
+            </div>
+
+            <div className="bg-white/70 backdrop-blur-lg p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="flex flex-wrap justify-center gap-4">
+                {results.map((note, index) => (
+                  <div
+                    key={index}
+                    className={`
+                      relative min-w-[100px] h-16 flex items-center justify-center
+                      transform transition-all duration-300 hover:scale-105
+                      ${index % 4 === 0 ? 'border-l-2 border-gray-200' : ''}
+                    `}
+                    style={{
+                      animation: `fadeIn 0.5s ease-out ${index * 0.1}s both`
+                    }}
+                  >
+                    <div className="flex flex-col items-center">
+                      <div className="text-2xl font-serif bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                        {note}
+                      </div>
+                    </div>
+                    {index < results.length - 1 && (
+                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-300">
+                        |
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 border-t border-gray-200 pt-4">
+                <div className="flex justify-center gap-2 text-sm text-gray-500">
+                  <span>Time Signature: 4/4</span>
+                  <span>•</span>
+                  <span>Key: {results[0]?.includes('m') ? 'Minor' : 'Major'}</span>
+                </div>
               </div>
             </div>
           </div>

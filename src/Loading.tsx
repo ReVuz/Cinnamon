@@ -3,14 +3,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import './styles.css';
 
 type LoadingProps = {
-  setResults: (results: { 
-    chord: string;
-    start_time: number;
-    end_time: number;
-  }[]) => void;
+  setResults: (results: string[]) => void;
   setSongTitle: (title: string) => void;
-  file: File | null;
-  youtubeUrl?: string;
 };
 
 interface LocationState {
@@ -18,7 +12,7 @@ interface LocationState {
   data: File | string;
 }
 
-const Loading: React.FC<LoadingProps> = ({ setResults, setSongTitle, file, youtubeUrl }) => {
+const Loading: React.FC<LoadingProps> = ({ setResults, setSongTitle }) => {
   const [progress, setProgress] = useState(0);
   const [cursorPosition, setCursorPosition] = React.useState({ x: 0, y: 0 });
   const [error, setError] = useState<string | null>(null);
@@ -36,8 +30,8 @@ const Loading: React.FC<LoadingProps> = ({ setResults, setSongTitle, file, youtu
   }, []);
 
   useEffect(() => {
-    let progressInterval: NodeJS.Timeout;
-    let timeoutId: NodeJS.Timeout;
+    let progressInterval: number;
+    let timeoutId: number;
 
     const analyzeAudio = async () => {
       if (!state?.type || !state?.data) {
@@ -91,7 +85,7 @@ const Loading: React.FC<LoadingProps> = ({ setResults, setSongTitle, file, youtu
           setProgress(100);
           setTimeout(() => navigate('/results'), 500);
         } else {
-          throw new Error('No valid chord data received. Please try again.');
+          throw new Error('No valid note data received. Please try again.');
         }
       } catch (err) {
         if (err instanceof Error) {
