@@ -1,4 +1,4 @@
-# [Project Name] 🎯
+# Flutune🎯
 
 
 ## Basic Details
@@ -13,27 +13,35 @@
 ### Hosted Project Link
 [mention your project hosted project link here]
 
-### Project Description
-[2-3 lines about what your project does]
+
+## Overview
+
+This web application is designed to detect and analyze chords in audio files or from YouTube videos. It provides an intuitive interface for musicians, music students, or anyone interested in chord analysis.
+
+## Features
+
+- Audio file upload functionality
+- YouTube URL input for online video analysis
+- Drag-and-drop interface for easy file uploading
+- Real-time chord detection and analysis
+- Responsive design for various screen sizes
+- Animated user interface for enhanced user experience
+
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
-
+Beginner flutists face a significant challenge in accessing accurate musical notes for songs they wish to learn. While digital platforms offer numerous tutorials and audio resources, there is a lack of reliable tools to convert audio into precise flute notation.
 ### The Solution
-[How are you solving it? Keep it fun!]
+
+FluteMagic transforms this challenge into an opportunity by offering an intuitive web application that:
+
+Instantly converts any audio file or YouTube song into flute-friendly notes
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
-
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- REACT
+- VITE
+- Fast API
 
 ### Implementation
 For Software:
