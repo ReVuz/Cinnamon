@@ -8,7 +8,6 @@ app = FastAPI()
 @app.post("/process-youtube")
 async def process_youtube(
     url: str = Form(...),
-    instrument: str = Form("flute")  # Default to flute
 ):
     try:
         audio_path = download_youtube_audio(url)
@@ -21,7 +20,6 @@ async def process_youtube(
 @app.post("/process-file")
 async def process_file(
     file: UploadFile = File(...),
-    instrument: str = Form("flute")  # Default to flute
 ):
     try:
         # Save uploaded file
@@ -34,6 +32,6 @@ async def process_file(
         
         notes = convert_audio_to_notes(file_path)
         os.remove(file_path)
-        return {"instrument": instrument, "notes": notes}
+        return {"notes": notes}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))

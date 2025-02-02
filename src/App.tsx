@@ -6,16 +6,18 @@ import Results from './Results';
 
 type ChordResult = {
   chord: string;
+  start_time: number;
+  end_time: number;
 };
 
-type InstrumentType = 'guitar' | 'piano' | 'violin';
+type InstrumentType = 'flute';
 
 function App() {
   const [file, setFile] = useState<File | null>(null);
   const [youtubeUrl, setYoutubeUrl] = useState('');
   const [results, setResults] = useState<ChordResult[]>([]);
   const [songTitle, setSongTitle] = useState('');
-  const [selectedInstrument, setSelectedInstrument] = useState<InstrumentType>('guitar');
+  const [selectedInstrument, setSelectedInstrument] = useState<InstrumentType>('flute');
   const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState('');
 
@@ -35,6 +37,7 @@ function App() {
               setResults={setResults}
               setSongTitle={setSongTitle}
               file={file}
+              youtubeUrl={youtubeUrl}
             />
           }
         />
